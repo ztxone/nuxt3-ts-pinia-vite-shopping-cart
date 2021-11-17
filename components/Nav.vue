@@ -17,3 +17,9 @@ import { useCartStore } from '../stores/cart'
 const cartStore = useCartStore()
 const count = computed(() => cartStore.count)
 </script>
+
+<style>
+  .router-link-exact-active {
+    border-bottom: 3px solid darkgray;
+  }
+</style>

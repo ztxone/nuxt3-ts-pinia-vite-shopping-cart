@@ -6,13 +6,16 @@
           <span animate-pulse>Загрузка данных...</span>
         </div>
       </template>
-
-      <div v-if="!formattedCart.length">
-        <h1 class="text-xl">Корзина пуста.</h1>
-      </div>
-      <div v-else class="space-y-4">
-        <CartCard v-for="(cartProduct, index) in formattedCart" :key="index" :cartProduct="cartProduct" />
-        <div class="text-right text-2xl md:text-4xl">Итого: {{ cartStore.total }} руб</div>
+      <div>
+        <div v-if="!formattedCart.length">
+          <h1 class="text-xl">Корзина пуста.</h1>
+        </div>
+        <div v-else>
+          <div class="flex flex-wrap">
+            <CartCard v-for="(cartProduct, index) in formattedCart" :key="index" :cartProduct="cartProduct" />
+          </div>
+          <div class="mt-8 text-xl md:text-4xl">Итого: {{ cartStore.total }} руб</div>
+        </div>
       </div>
     </Suspense>
   </div>

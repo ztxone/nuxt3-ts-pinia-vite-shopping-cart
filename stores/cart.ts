@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-// import { CART_STORAGE } from '../composables/usePersistCart' JSON.parse(localStorage.getItem(CART_STORAGE) as string) ??
 import { useProductStore } from './products'
 
 export interface Purchase {

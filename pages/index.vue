@@ -8,7 +8,9 @@
       </template>
       <div>
         <h1 text-2xl font-bold pb-6>Доступные товары</h1>
-        <ProductCard v-for="product in products" :key="product.id" :product="product" />
+        <div flex flex-wrap>
+          <ProductCard v-for="product in products" :key="product.id" :product="product" />
+        </div>
       </div>
     </Suspense>
   </div>
@@ -24,7 +26,6 @@ import { useProductStore } from '../stores/products'
 const productStore = useProductStore()
 
 productStore.fetchAll()
-// usePersistCart()
 const products = computed(() => productStore.list)
 
 </script>
